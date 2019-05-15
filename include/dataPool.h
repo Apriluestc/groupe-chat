@@ -44,7 +44,7 @@ public:
         sem_init(&_blankSem, 0, size);
         sem_init(&_dataSem, 0, 0);
     }
-
+/*
     DataPool(const DataPool& rhx) {
         this->_pool = rhx._pool;
         this->_capacity = rhx._capacity;
@@ -53,7 +53,7 @@ public:
         this->_blankSem = rhx._blankSem;
         this->_dataSem = rhx._dataSem;
     }
-
+*/
     void getMessage(std::string& inMessage) {
         sem_wait(&_dataSem);
         inMessage = _pool[_consumeStep];

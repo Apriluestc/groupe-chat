@@ -23,7 +23,7 @@ CC 			   	:= g++
 
 all : $(BIN_PATH)server $(BIN_PATH)client $(BIN_PATH)echoserver $(TESTBIN_PATH)txproj_version
 	
-$(BIN_PATH)server : $(SRC_PATH)server.cpp $(INCLUDE_PATH)server.h
+$(BIN_PATH)server : $(SRC_PATH)server.cpp $(INCLUDE_PATH)server.h $(INCLUDE_PATH)dataPool.h $(INCLUDE_PATH)info.h
 	[ -e $(BIN_PATH) ] || mkdir $(BIN_PATH)
 	$(CC) -g $^ -o $@ $(LIB_PATH) $(LD_FLAGS) -std=c++11
 
@@ -51,7 +51,7 @@ run-test :
 	./test/txproj_version
 
 clean :
-	rm $(BIN_PATH)server $(BIN_PATH)client
+	rm $(BIN_PATH)server $(BIN_PATH)client $(BIN_PATH)echoserver rm -rf $(BIN_PATH)
 
 clean-all :
 	rm $(BIN_PATH)server $(BIN_PATH)client $(BIN_PATH)echoserver $(TESTBIN_PATH)txproj_version

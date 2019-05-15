@@ -1,0 +1,18 @@
+    从今天开始调试服务端程序，一直出现不愉快的 bug，经过一番努力后程序终于编译通过
+在执行的时候，却出现了令我难过的段错误，然而我没有放弃，继续使用 gdb 进行调试，意料
+之外，就在我使用 gdb 进行调试程序的时候，出现了一系列不知道，没了解过的错误，
+比如：Missing separate debuginfos, 
+    use: debuginfo-install 
+    glibc-2.17-260.el7_6.4.x86_64 
+    jsoncpp-0.10.5-2.el7.x86_64 
+    libgcc-4.8.5-36.el7_6.1.x86_64 
+    libstdc-4.8.5-36.el7_6.1.x86_64
+
+    在进行安装的时候，修改了 yum 源，PS: 这是我第二次修改 yum 源
+
+    在这次修改 bug 中学到了使用 gdb 调试程序的几种方法：如下
+    1、使用 printf 输出信息
+    2、使用 gcc 和 gdb 调试
+    3、使用 core 文件和 gdb 调试
+    参考资料：https://blog.csdn.net/heybeaman/article/details/80938155
+    

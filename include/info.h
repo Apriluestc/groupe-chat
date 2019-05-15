@@ -47,8 +47,6 @@ public:
         //将 json 对象写回 string 中
         //(void)strInfo;
         writer.writeObjToJson(root, strInfo);
-
-
     }
 
     //反序列化从 json 对象中得到消息内容

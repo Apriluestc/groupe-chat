@@ -1,0 +1,28 @@
+    今天就来具体说明一下我在项目中是如何扩展 UDP 的
+    
+    添加发送和接收数据的缓冲区
+    
+    UDP 接收端缓冲区和丢包
+    
+    UDP 丢包原因：
+    
+    调用recvfrom方法接收到数据后，处理数据花费时间太长，再次调用recvfrom，两次调用间隔里，发过来的包可能丢失
+    
+    通过将接收到数据存入一个缓冲区，并迅速返回继续recvfrom，排除了这个原因\
+    
+    通过数据包的id域观察发现，接收的情况：接收到一些包之后丢失一些包，重复如此。分析原因，可能是因为连续多
+个UDP包超过了udp的接收端缓冲区（UDP包过大或者包频率过快），导致丢包。于是将接收缓冲设置为5M，问题就解决了。
+
+    int nRecvBuf = 5 * 1024 * 1024;       //设置成5M
+    Setsockopt(s,SOL_SOCKET, SO_RCVBUF, (const char *)&nRecvBuf,sizeof(nRecvBuf));
+    
+    int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen);
+    sockfd: 标识一个套接字的描述字
+    
+    level:　选项定义的层次：支持SOL_SOCKET, IPPROTO_TCP, IPPROTO_IP,和IPPROTO_IPV6
+    
+    optname：需设置得选项 SO_RCVBUF(接收缓冲区)，SO_SNDBUF(发送缓冲区)
+
+    optval：指针，指向存放选项待设置的新值的缓冲区
+    optlen：optval的大小
+

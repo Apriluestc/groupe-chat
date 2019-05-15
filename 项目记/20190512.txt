@@ -1,0 +1,40 @@
+    今天，我给大家分享一些利用 gdb 进行调试程序的一般步骤和常用命令
+
+    1、在使用 gdb 进行调试的前提呢，就是在编译选项中加上 -g 选项
+例如：g++ -g $^ -o $@ -某些参数
+
+    2、gdb 调试命令：gdb ./可执行程序
+
+    3、进入 gdb 模式后，可以设置断点 break(b) 行号 or 函数名，info b 查看断点
+clear 清除断点 or 行号，
+
+    4、run(r) 开始运行，next(n) 但不调试不进入函数，step(s) 单步调试进入函数，
+continue 继续运行，finish 运行程序，直到当前函数完成返回，until(u) 退出循环体内的
+单步调试
+
+    5、watch 变量名，变量改变时输出提醒，print(p) 变量名，打印当前变量值
+
+    6、set args ** 可指定运行时参数，show args 可以查看设置好的运行参数
+
+    7、run > outfile 使用重定向控制程序输出
+
+    8、path 可设定程序运行路径，show paths 查看当前程序的运行路径
+
+    9、shell 命令，可以调用 bash 命令
+
+gdb 常用命令：
+    gdb 使用前置条件：编译时加入 debug 信息 -g
+    gdb ./exe 调试程序入口
+    run 运行程序
+    backtrace 设置栈信息
+    print 打印信息
+    call 调用函数
+    break 设置断点
+    clear 清除断点
+    continue 继续运行程序
+    until 直到当前循环完成
+    next 单步调试，不进入函数
+    step 单步调试，进入函数，语句调试
+    finish 执行到当前函数返回
+    set var x = 10 设置当前变量值
+    return 强制函数返回
