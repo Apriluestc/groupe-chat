@@ -1,0 +1,4 @@
+[ -e /home/shiny/repository/chat/bin/ ] || mkdir /home/shiny/repository/chat/bin/
+g++ -g /home/shiny/repository/chat/src/server.cpp /home/shiny/repository/chat/include/server.h /home/shiny/repository/chat/include/dataPool.h /home/shiny/repository/chat/include/info.h -o /home/shiny/repository/chat/bin/server /usr/lib64/libjsoncpp.a -lpthread -ljsoncpp -std=c++11
+g++ -g /home/shiny/repository/chat/src/client.cpp /home/shiny/repository/chat/include/client.h -o /home/shiny/repository/chat/bin/client /usr/lib64/libjsoncpp.a -lpthread -ljsoncpp -std=c++11 -lncurses
+g++ -g /home/shiny/repository/chat/src/echoserver.cpp -o /home/shiny/repository/chat/bin/echoserver /usr/lib64/libjsoncpp.a -std=c++11
