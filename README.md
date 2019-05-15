@@ -3,7 +3,7 @@
 [![Passing Status](https://github.com/Shiny-Man/img.org/blob/master/passing.svg)](https://github.com/Shiny-Man/mcr)
 [![Bulid Status](https://github.com/Shiny-Man/img.org/blob/master/build.svg)](https://github.com/Shiny-Man/mcr)
 
-## what is MCR （CS+消息队列）
+## what is MCR （CS + UDP socket + ncurses + 消息队列）
 
 ### **MCR 是一个基于 UDP socket 通信的多人聊天项目，其中 CS 间通信，其中，server 端维护了一个生产者线程一个消费之线程，分别从消息队列中 get 和 put 数据，其中消息队列作为中间层，达到消息转发的目的，使用消息队列进行消息转发以弥补生产和消费的不一致问题**
 
