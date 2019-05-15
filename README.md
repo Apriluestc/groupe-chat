@@ -1,11 +1,11 @@
-# MCR
+# [MCR](https://blog.csdn.net/qq_41880190/article/details/90235055)
 
 [![Passing Status](https://github.com/Shiny-Man/img.org/blob/master/passing.svg)](https://github.com/Shiny-Man/mcr)
 [![Bulid Status](https://github.com/Shiny-Man/img.org/blob/master/build.svg)](https://github.com/Shiny-Man/mcr)
 
 ## what is MCR
 
-- 项目详情请见 CSDN 博客：[MCR](https://blog.csdn.net/qq_41880190/article/details/90235055)
+- **项目详情请见 CSDN 博客**：[MCR](https://blog.csdn.net/qq_41880190/article/details/90235055)
 
 - 简单来说 MCR 是一个基于 UDP socket 的多人聊天项目，可能有人会这么问网络通信使用 UDP socket 怎么会达到多人通信且准确无误的发送给所要接收此的目标接收者
 
@@ -80,5 +80,3 @@
 - 在编写服务端代码的过程中，处处有坑，不要打开了套接字而忘记关闭，防止指针与常量字符串的乱用而导致的段错误
 
 - PS：很难调，这个 bug，这次还提高了我的 gdb 使用能力，哈哈哈哈哈，虽然春招路上处处不尽人意，但我相信秋招路上一定要坚持不懈，找个好工作
-
-个人感悟以及项目详情请见 CSDN 博客：[MCR](https://blog.csdn.net/qq_41880190/article/details/90235055)
