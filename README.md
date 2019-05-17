@@ -2,7 +2,7 @@
 
 [![Passing Status](https://github.com/Shiny-Man/img.org/blob/master/passing.svg)](https://github.com/Shiny-Man/mcr)
 [![Bulid Status](https://github.com/Shiny-Man/img.org/blob/master/build.svg)](https://github.com/Shiny-Man/mcr)
-![](https://img.shields.io/badge/UDP-socket-orange.svg)
+[![](https://img.shields.io/badge/UDP-socket-orange.svg)](https://github.com/Apriluestc/groupe-chat/blob/master/README.md)
 
 ## what is group chat （CS + UDP socket + ncurses + 消息队列）
 
