@@ -1,5 +1,6 @@
 # [group chat](https://blog.csdn.net/qq_41880190/article/details/90235055)
 
+[![](https://img.shields.io/badge/snowflake-id-brightgreen.svg)](https://github.com/Apriluestc/groupe-chat/blob/master/IM.md)
 [![](https://img.shields.io/badge/UDP-socket-orange.svg)](https://github.com/Apriluestc/groupe-chat/blob/master/README.md)
 
 ## what is group chat （CS + UDP socket + ncurses + 消息队列）
