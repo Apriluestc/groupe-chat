@@ -1,0 +1,3 @@
+/home/gt/m_workplace/chat-system/client/build/CMakeFiles/rebuild_cache.dir
+/home/gt/m_workplace/chat-system/client/build/CMakeFiles/edit_cache.dir
+/home/gt/m_workplace/chat-system/client/build/CMakeFiles/client.dir

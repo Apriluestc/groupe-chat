@@ -1,0 +1,1 @@
+/usr/bin/c++   -g -pthread   CMakeFiles/client.dir/src/userdata.cpp.o CMakeFiles/client.dir/src/clientstart.cpp.o CMakeFiles/client.dir/src/iomodel.cpp.o CMakeFiles/client.dir/src/main.cpp.o CMakeFiles/client.dir/src/cmdmodel.cpp.o CMakeFiles/client.dir/src/savemutex.cpp.o CMakeFiles/client.dir/src/savelist.cpp.o  -o client -rdynamic 

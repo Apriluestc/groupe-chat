@@ -1,0 +1,6 @@
+chat-server/CMakeLists.txt.user
+client-test/CMakeLists.txt.user
+stress-test/CMakeLists.txt.user
+chat-client/chat-client.pro.user
+build-chat-server-Desktop_Qt_5_6_2_GCC_64bit-Default
+build-chat-client-Desktop_Qt_5_7_0_MinGW_32bit-Debug

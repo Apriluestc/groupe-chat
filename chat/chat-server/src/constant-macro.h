@@ -1,0 +1,10 @@
+#ifndef CONSTANT_MACRO_H
+#define CONSTANT_MACRO_H
+
+#define IP "0.0.0.0"
+#define BUFSIZE 1024*1000
+#define PORT 8884
+#define LISTENNUM 1000
+#define TIMEOUT_USEC 1000
+
+#endif // CONSTANT_MACRO_H
