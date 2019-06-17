@@ -1,12 +1,12 @@
-PROJECT	= $(shell pwd)
-BIN 	= $(PROJECT)/bin
+PROJECT			= $(shell pwd)
+BIN 			= $(PROJECT)/bin
 CC		= gcc
 
 all : $(BIN)/server $(BIN)/client
 
-$(BIN)/server : $(PROJECT)/server.cpp
+$(BIN)/server : $(PROJECT)/*.cpp
 	[ -e $(BIN) ] || mkdir $(BIN)
-	g++ $^ -o $@
+	g++ $^ -o $@ -std=c++11 -lpthread
 
 $(BIN)/client : $(PROJECT)/client.c
 	gcc $^ -o $@
@@ -14,4 +14,4 @@ $(BIN)/client : $(PROJECT)/client.c
 .PHONY :
 
 clean:
-	rm -rf $(BIN)
+	rm -rf $(BIN)/server client

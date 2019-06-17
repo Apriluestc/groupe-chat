@@ -1,5 +1,6 @@
 #define _GNU_SOURCE 1
 #include"log.h"
+#include"Logging.h"
 #include<cstdio>
 #include<cstdlib>
 #include<unistd.h>
@@ -63,6 +64,7 @@ int startup(const int port, char *ip)
 	{
 		perror("listen");
 		exit(4);
+        LOG << "listen sucess";
 	}
 
 	return sock;
@@ -73,6 +75,9 @@ int startup(const int port, char *ip)
 int main(int argc,char *argv[])
 {
     mkdir("./log", 0777);
+    std::string logPath = "./log/server.log";
+    Logger::setLogFileName(logPath);
+    LOG << "_PTHREAD is not defined";
 	if(argc!=3)
 	{
 		printf("usage: %s [IP] [PORT]\n",argv[0]);
@@ -80,7 +85,7 @@ int main(int argc,char *argv[])
 	}
 
 	int sock=startup(atoi(argv[2]),argv[1]);
-	
+	LOG << "server start sucess";
 	client_data *users=new client_data [FD_LIMIT];
 	pollfd fds[USER_LIMIT+1];
 
@@ -98,6 +103,7 @@ int main(int argc,char *argv[])
 		if(poll(fds,user_count+1,-1)<0)
 		{
 			printf("poll faliure\n");
+            LOG << "poll faliure";
 			break;
 		}
 

@@ -8,5 +8,5 @@
 #define FATAL   4
 
 
-void print_log(std::string msg,int l);
+void print_log(std::string msg,int line);
 #endif

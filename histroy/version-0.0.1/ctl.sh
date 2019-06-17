@@ -3,7 +3,7 @@
 SERVER_PATH=$(pwd)
 server=$SERVER_PATH/bin/server
 conf=$SERVER_PATH/conf/server.conf
-echo "server.conf 载入成功 ···" >> $SERVER_PATH/bin/log/server.log
+echo "`date +%Y-%m-%d,%H:%m:%s`:server.conf 载入成功 ···" >> $SERVER_PATH/bin/syslog/sys.log
 
 function usage() {
 	printf "Usage: %s [-s(start) | -q(stop) | -r(restart)]\n" "$0"
@@ -12,14 +12,14 @@ function usage() {
 function startServer() {
 	pid=$(pidof $server)
 	if [ $? -eq 0 ];then
-        echo  "server is already runing ···"
-        echo  "server is already runing ···" >> $SERVER_PATH/bin/log/server.log
+        echo  "`date +%Y-%m-%d,%H:%m:%s`:server is already runing ···"
+        echo  "`date +%Y-%m-%d,%H:%m:%s`:server is already runing ···" >> $SERVER_PATH/bin/syslog/sys.log
 	else
 		ip=$(awk -F: '/ip/{print $2}' $conf)
 		port=$(awk -F: '/port/{print $2}' $conf)
-		$server $ip $port &
-        echo "server start success ···"
-        echo "server start success ···" >> $SERVER_PATH/bin/log/server.log
+		$sudo $server $ip $port &
+        echo "`date +%Y-%m-%d,%H:%m:%s`:server start success ···"
+        echo "`date +%Y-%m-%d,%H:%m:%s`:server start success ···" >> $SERVER_PATH/bin/syslog/sys.log
 	fi
 }
 
@@ -27,21 +27,21 @@ function stopServer() {
 	pid=$(pidof $server)
 	if [ $? -eq 0 ];then
 		kill -9 $pid
-        echo "server stop success ···"
-        echo "server stop success ···" >> $SERVER_PATH/bin/log/server.log
+        echo "`date +%Y-%m-%d,%H:%m:%s`:server stop success ···"
+        echo "`date +%Y-%m-%d,%H:%m:%s`:server stop success ···" >> $SERVER_PATH/bin/syslog/sys.log
 	else
-        echo "server is already stop ···"
-        echo "server is already stop ···" >> $SERVER_PATH/bin/log/server.log
+        echo "`date +%Y-%m-%d,%H:%m:%s`:server is already stop ···"
+        echo "`date +%Y-%m-%d,%H:%m:%s`:server is already stop ···" >> $SERVER_PATH/bin/syslog/sys.log
 	fi
 }
 
 function restartServer() {
 	stopServer
-    echo "server is already stop ···"
-    echo "server is already stop ···" >> $SERVER_PATH/bin/log/server.log
+    echo "`date +%Y-%m-%d,%H:%m:%s`:server is already stop ···"
+    echo "`date +%Y-%m-%d,%H:%m:%s`:server is already stop ···" >> $SERVER_PATH/bin/syslog/sys.log
 	startServer
-    echo "server is already restart ···"
-    echo "server is already restart ···" >> $SERVER_PATH/bin/log/server.log
+    echo "`date +%Y-%m-%d,%H:%m:%s`:server is already restart ···"
+    echo "`date +%Y-%m-%d,%H:%m:%s`:server is already restart ···" >> $SERVER_PATH/bin/syslog/sys.log
 }
 
 
